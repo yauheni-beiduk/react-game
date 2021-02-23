@@ -1,0 +1,15 @@
+.pig_wrapper {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.pig {
+    display: block;
+    width: 70px;
+    height: 80px;
+    background: url(./piggy.png) bottom center no-repeat;
+    background-size:contain;
+    /* position: absolute; */
+
+}
