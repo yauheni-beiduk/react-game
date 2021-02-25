@@ -2,10 +2,11 @@ import s from './Coin.module.css'
 
 
 
-const Coin = () => {
+const Coin = ({isCoinUp,catchUp}) => {
+console.log({isCoinUp})
     return(
     <div >
-      <div  className={s.coin}></div>
+      <div onClick={catchUp} className={isCoinUp? s.coinUp: s.coin} ></div>
     </div>
     )
 }
