@@ -5,33 +5,49 @@ import { useEffect, useState } from 'react';
 
 
 const PiggyBank = ({id, isCoinUp}) => {
-const [up,setUp] =  useState({isCoinUp: true})
+console.log(id)
 
-console.log(setUp)
+const [up,setUp] =  useState({isCoinUp: isCoinUp})
+console.log(up)
+const [score,setScore] = useState(0)
+
 //   const upCoin =  ( ) => {
 //     let fail = 0;
 //      setTimeout(() => {
 //        if (isCoinUp == true) {
 //         fail++;
 //         console.log(fail)
+//       //  setUp({isCoinUp : !isCoinUp})
 //      }
-//   //  if(isCoinUp == false) upCoin(isCoinUp);
+//      else if(fail === 5){
+//        console.log('game over')
+//      }
+//    else if(!isCoinUp) {
+//      upCoin(isCoinUp)
+//      setScore(score=>score+1);
 
-// },1000) }
+//     };
+
+// },2000) }
+// upCoin(isCoinUp)
 
 
-//  upCoin(isCoinUp)
 
-const catchUp = (e) => {
-  if(!e.isTrusted) return; 
-   setUp({isCoinUp: false}) 
- 
+const catchUp = (id) => {
+  console.log(id)
+  if( id===id) {
+    return setUp({isCoinUp: !isCoinUp});}
+    else { 
+   setUp({isCoinUp: isCoinUp})
+   console.log(up) ;
+   setScore(score=>score+1);
+    }
 }
 
 
   return(
     <div className={s.pig_wrapper, s.pig} key={id}>
-      <Coin catchUp={catchUp} isCoinUp={up.isCoinUp}/>
+      <Coin catchUp={catchUp} id={id}  isCoinUp={up.isCoinUp}/>
       </div>
     )
 }
