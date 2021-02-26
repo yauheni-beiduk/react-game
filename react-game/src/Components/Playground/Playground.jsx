@@ -1,43 +1,45 @@
 import PiggyBank from "./PiggyBank/PiggyBank";
 import "./Playground.css";
-
 import { useEffect, useState } from "react";
 
+const Playground = ({countPigs, score, setScore }) => {
 
 
-const Playground = () => {
+  const randomPiggyBank = (countPigs) => {
+    let lastBank;
+    const number = Math.floor(Math.random() * countPigs.length);
+    const bank = countPigs[number];
+    if (bank.id === lastBank) {
+      return randomPiggyBank(countPigs);
+    }
+    lastBank = bank.id;
+    return bank.id;
+  };
 
-    let countPigs = [
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 },
-        { id: 6 },
-      ];
-      
-      const randomPiggyBank = (countPigs) => {
-        let lastBank;
-        const number = Math.floor(Math.random() * countPigs.length);
-        const bank = countPigs[number];
-        if (bank.id === lastBank) {
-          return randomPiggyBank(countPigs);
-        }
-        lastBank = bank.id;
-        return bank.id;
-      };
-
-const idPiggy = randomPiggyBank(countPigs);
+  const [idPiggy, setIdPiggy] = useState(randomPiggyBank(countPigs));
 
 
+  useEffect(() => {
+    if (score < 3) {
+      console.log(score);
+      setTimeout(() => {
+       setIdPiggy(randomPiggyBank(countPigs));
+      }, 1000);
+    }
+  }, [idPiggy]);
 
+  const renderPigs = (countPigs) =>
+    countPigs.map((pig) => (
+      <PiggyBank
+        score={score}
+        key={pig.id}
+        id={pig.id}
+        setScore={setScore}
+        isCoinUp={pig.id === idPiggy}
+      />
+    ));
 
-
-
-const renderPigs = (countPigs) => (countPigs.map((pig) => <PiggyBank key={pig.id} id={pig.id} isCoinUp={pig.id === idPiggy}/>));
-  
-
-  return <div className='playground'>{renderPigs(countPigs)}</div>;
+  return <div className="playground">{renderPigs(countPigs)}</div>;
 };
 
 export default Playground;

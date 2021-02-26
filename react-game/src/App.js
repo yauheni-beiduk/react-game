@@ -1,15 +1,13 @@
 
-import styles from'./App.css';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
-import Playground from './Components/Playground/Playground';
+
+import Main from "./Components/Main";
+import styles from "./App.module.css";
+
 
 function App() {
   return (
-    <div className={styles.game}>
-    <Header/>
-    <Playground/>
-    <Footer/>
+    <div className={styles.game}>   
+<Main/>
     </div>
   );
 }

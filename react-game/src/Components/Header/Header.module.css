@@ -1,7 +1,31 @@
 .name {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 10vh;
     text-align: center;
     font-size: 30px;
     background-color: aqua;
+}
+
+.button{
+    width: 70px;
+    height: 35px;
+    margin: 10px 15px auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+}
+
+.buttonsCoins{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonCoin {
+    margin:10px auto;
+    cursor: pointer;
+    outline: none;
 }
