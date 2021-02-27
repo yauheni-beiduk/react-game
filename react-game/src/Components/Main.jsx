@@ -2,6 +2,10 @@ import { useState } from "react";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Playground from "./Playground/Playground";
+import bitcoin from "./Playground/Coin/iconsCoin/bitcoin.png";
+import dollar from "./Playground/Coin/iconsCoin/dollars.png";
+import euro from "./Playground/Coin/iconsCoin/euro.png";
+
 
 function Main() {
   const [countPigs, setCountPigs] = useState([
@@ -13,18 +17,30 @@ function Main() {
     { id: 6 },
   ]);
 
-  const [chooseCoin, setChooseCoin] = useState();
+ 
+  const imagesUrl = {
+    bitcoin,
+    dollar,
+    euro,
+  };
+  const [chooseCoin, setChooseCoin] = useState(imagesUrl.bitcoin);
+
+  const [disabled,setDisabled] = useState(false);
+  
   const [score, setScore] = useState(0);
   // const [fail, setFail] = useState(0);
 
   return (
     <div>
-      <Header  countPigs={countPigs} setCountPigs={setCountPigs} score={score} />
-      <Playground
+      <Header
+        chooseCoin={chooseCoin}
+        setChooseCoin={setChooseCoin}
         countPigs={countPigs}
+        setCountPigs={setCountPigs}
         score={score}
-        setScore={setScore}
+        imagesUrl={imagesUrl}
       />
+      <Playground countPigs={countPigs} score={score} setScore={setScore} chooseCoin={chooseCoin}/>
       <Footer />
     </div>
   );

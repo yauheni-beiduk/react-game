@@ -2,7 +2,7 @@ import PiggyBank from "./PiggyBank/PiggyBank";
 import "./Playground.css";
 import { useEffect, useState } from "react";
 
-const Playground = ({countPigs, score, setScore }) => {
+const Playground = ({countPigs, score, setScore, chooseCoin }) => {
 
 
   const randomPiggyBank = (countPigs) => {
@@ -36,6 +36,7 @@ const Playground = ({countPigs, score, setScore }) => {
         id={pig.id}
         setScore={setScore}
         isCoinUp={pig.id === idPiggy}
+        chooseCoin={chooseCoin} 
       />
     ));
 
