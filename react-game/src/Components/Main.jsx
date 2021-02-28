@@ -16,17 +16,12 @@ function Main() {
     { id: 5 },
     { id: 6 },
   ]);
-
- 
   const imagesUrl = {
     bitcoin,
     dollar,
     euro,
   };
   const [chooseCoin, setChooseCoin] = useState(imagesUrl.bitcoin);
-
-  const [disabled,setDisabled] = useState(false);
-  
   const [score, setScore] = useState(0);
   // const [fail, setFail] = useState(0);
 
