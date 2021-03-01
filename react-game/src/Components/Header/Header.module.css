@@ -15,7 +15,7 @@
 
 .size{
     font-size: 20px;
-    margin: 10px 15px auto;
+    margin: 5px 10px auto;
 }
 .button{
     width: 70px;
@@ -38,4 +38,20 @@
     margin:10px auto;
     cursor: pointer;
     outline: none;
+}
+
+.fullscreen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50px;
+    height: 20px;
+    margin: 0px 5px auto;
+    cursor: pointer;
+}
+
+.settings {
+    margin:5px auto;
+    width: 20px;
+    height: 20px;
 }

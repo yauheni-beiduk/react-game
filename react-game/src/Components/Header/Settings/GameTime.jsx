@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import styles from '../Header.module.css'
 
-const GameTime = ({setTimer}) => {
-    const [time,setTime] = useState(60);
+const GameTime = ({setTime}) => {
+    const [time,setTimer] = useState(30);
     const handlerOnClickTimeOne = () => {
-        setTime(30);
         setTimer(30);
+        setTime(30);
       };
       const handlerOnClickTimeTwo = () => {
-        setTime(60);
         setTimer(60);
+        setTime(60);
       };
     return (
         <div className={styles.buttonsCoins}>

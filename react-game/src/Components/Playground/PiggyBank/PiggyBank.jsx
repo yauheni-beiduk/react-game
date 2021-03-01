@@ -4,16 +4,16 @@ import { useEffect, useState } from 'react';
 
 
 
-const PiggyBank = ({id, isCoinUp,setScore,score,chooseCoin}) => {
+const PiggyBank = ({id, isCoinUp,setScore,chooseCoin}) => {
 
 
 
-console.log('piggy1',isCoinUp)
+// console.log('piggy', id , isCoinUp)
 
 
   return(
     <div className={s.pig_wrapper, s.pig} key={id}>
-      <Coin chooseCoin={chooseCoin}  id={id} setScore={setScore} score={score} isCoinUp={isCoinUp}/>
+      <Coin chooseCoin={chooseCoin}  id={id} setScore={setScore}  isCoinUp={isCoinUp}/>
       </div>
     )
 }

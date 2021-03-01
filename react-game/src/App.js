@@ -1,14 +1,9 @@
 
-
-import Main from "./Components/Main";
-import styles from "./App.module.css";
-
+import MainContainer from "./Components/MainContainer";
 
 function App() {
   return (
-    <div className={styles.game}>   
-<Main/>
-    </div>
+<MainContainer/>
   );
 }
 

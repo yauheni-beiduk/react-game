@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const ButtonChangeCoin = ({setChooseCoin,imagesUrl}) => {
 
-    const [checkedCoin,setCheckedCoin] = useState('bitcoin')
+  const [checkedCoin,setCheckedCoin] = useState('bitcoin')
 
   const handlerOnClickImageBitcoin = () => {
     setChooseCoin(imagesUrl.bitcoin);

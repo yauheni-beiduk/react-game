@@ -7,10 +7,13 @@ import ButtonChangeCoin from "./Settings/ButtonChangeCoin";
 import ButtonChangeQuantity from "./Settings/ButtonChangeQuantity";
 import Timer from "./Timer";
 import GameTime from "./Settings/GameTime";
+import full from './icons/full.svg'
+import settings from './icons/settings.svg'
 
 
-const Header = ({score,countPigs,setCountPigs,setChooseCoin,imagesUrl,timer,setTimer}) => {
+const Header = ({handle,score,countPigs,setCountPigs,setChooseCoin,imagesUrl,sec,setTime}) => {
   const [modal, setModal] = useState(false);
+
   return (
     <div className={styles.name}>
       <PureModal
@@ -33,15 +36,21 @@ const Header = ({score,countPigs,setCountPigs,setChooseCoin,imagesUrl,timer,setT
         <div className={styles.title}>Select quantity of pigs:</div>
           <ButtonChangeQuantity countPigs={countPigs} setCountPigs={setCountPigs}/>
         <div className={styles.title}>Game time:</div>
-        <GameTime  setTimer={setTimer}/>
+        <GameTime  setTime={setTime}/>
       </PureModal>
-      <button className={styles.button}  onClick={() => setModal(true)}>
-        Settings
-      </button>
-      <Timer timer={timer}/>
+      <div className={styles.fullscreen} >
+      <div  onClick={handle.enter}>
+        <img className={styles.settings} src={full} alt="fullscreen"/>
+      </div>
+      <div  onClick={() => setModal(true)}>
+      <img className={styles.settings} src={settings} alt="settings"/>
+      </div>
+      </div>
+      <Timer sec={sec} />
       <div className={styles.size}>Score: {score}</div>
       <div  className={styles.size}>Catch The Coin</div>
     </div>
+    
   );
 };
 
