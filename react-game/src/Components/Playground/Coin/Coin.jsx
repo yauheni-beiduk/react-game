@@ -11,9 +11,10 @@ const Coin = ({ id, isCoinUp, score, setScore,chooseCoin }) => {
 
   useEffect(() => {
     if (isCoinUp) {
-      setTimeout(() => {
+      setInterval(() => {
         setUp(!isCoinUp);
       }, 2000);
+      console.log('timeout',isCoinUp)
     }
   }, []);
 
@@ -25,10 +26,7 @@ const Coin = ({ id, isCoinUp, score, setScore,chooseCoin }) => {
       hitSound.play();
     }
   };
-
   console.log("coin", up);
-  console.log(chooseCoin);
-
   return (
     <div  onClick={handlerOnClick}>
       <img

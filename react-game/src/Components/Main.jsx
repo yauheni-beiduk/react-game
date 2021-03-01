@@ -23,8 +23,8 @@ function Main() {
   };
   const [chooseCoin, setChooseCoin] = useState(imagesUrl.bitcoin);
   const [score, setScore] = useState(0);
-  // const [fail, setFail] = useState(0);
 
+  const [timer, setTimer] = useState(60);
   return (
     <div>
       <Header
@@ -34,8 +34,10 @@ function Main() {
         setCountPigs={setCountPigs}
         score={score}
         imagesUrl={imagesUrl}
+        timer={timer}
+        setTimer={setTimer}
       />
-      <Playground countPigs={countPigs} score={score} setScore={setScore} chooseCoin={chooseCoin}/>
+      <Playground timer={timer} countPigs={countPigs} score={score} setScore={setScore} chooseCoin={chooseCoin}/>
       <Footer />
     </div>
   );

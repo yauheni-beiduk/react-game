@@ -6,8 +6,17 @@
     text-align: center;
     font-size: 30px;
     background-color: aqua;
+    
 }
 
+.title{
+    margin-top: 20px;
+}
+
+.size{
+    font-size: 20px;
+    margin: 10px 15px auto;
+}
 .button{
     width: 70px;
     height: 35px;
@@ -17,6 +26,7 @@
     cursor: pointer;
     color: black;
     background-color: transparent;
+    
 }
 
 .buttonsCoins{

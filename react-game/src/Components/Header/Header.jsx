@@ -5,9 +5,11 @@ import "react-pure-modal/dist/react-pure-modal.min.css";
 import { useState } from "react";
 import ButtonChangeCoin from "./Settings/ButtonChangeCoin";
 import ButtonChangeQuantity from "./Settings/ButtonChangeQuantity";
+import Timer from "./Timer";
+import GameTime from "./Settings/GameTime";
 
 
-const Header = ({score,countPigs,setCountPigs,setChooseCoin,imagesUrl}) => {
+const Header = ({score,countPigs,setCountPigs,setChooseCoin,imagesUrl,timer,setTimer}) => {
   const [modal, setModal] = useState(false);
   return (
     <div className={styles.name}>
@@ -26,17 +28,19 @@ const Header = ({score,countPigs,setCountPigs,setChooseCoin,imagesUrl}) => {
         <div>
           <Sound />
         </div>
-        <div>Choose coin:</div>
+        <div className={styles.title}>Choose coin:</div>
           <ButtonChangeCoin imagesUrl={imagesUrl} setChooseCoin={setChooseCoin}/>
-        <div>Select quantity of pigs:</div>
+        <div className={styles.title}>Select quantity of pigs:</div>
           <ButtonChangeQuantity countPigs={countPigs} setCountPigs={setCountPigs}/>
-        <div>Game time:</div>
+        <div className={styles.title}>Game time:</div>
+        <GameTime  setTimer={setTimer}/>
       </PureModal>
       <button className={styles.button}  onClick={() => setModal(true)}>
         Settings
       </button>
-      <div>Score: {score}</div>
-      <div>Catch The Coin</div>
+      <Timer timer={timer}/>
+      <div className={styles.size}>Score: {score}</div>
+      <div  className={styles.size}>Catch The Coin</div>
     </div>
   );
 };

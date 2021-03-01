@@ -2,7 +2,7 @@ import PiggyBank from "./PiggyBank/PiggyBank";
 import "./Playground.css";
 import { useEffect, useState } from "react";
 
-const Playground = ({countPigs, score, setScore, chooseCoin }) => {
+const Playground = ({countPigs, score, setScore, chooseCoin ,timer}) => {
 
 
   const randomPiggyBank = (countPigs) => {
@@ -20,12 +20,10 @@ const Playground = ({countPigs, score, setScore, chooseCoin }) => {
 
 
   useEffect(() => {
-    if (score < 3) {
-      console.log(score);
+    if({timer} !=0 ) {
       setTimeout(() => {
        setIdPiggy(randomPiggyBank(countPigs));
-      }, 1000);
-    }
+      }, 1000);}
   }, [idPiggy]);
 
   const renderPigs = (countPigs) =>
