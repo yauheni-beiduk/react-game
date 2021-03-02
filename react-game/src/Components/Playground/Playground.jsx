@@ -16,11 +16,13 @@ const Playground = ({ countPigs, score, setScore, chooseCoin, timer }) => {
       return bank.id;
     };
     if ({ timer } != 0) {
-      setTimeout(() => {
+      const timer =  setTimeout(() => {
         setIdPiggy(randomPiggyBank(countPigs));
       }, 1000);
     }
+    return () => clearTimeout(timer);
   }, [idPiggy]);
+
 
   const renderPigs = (countPigs) =>
     countPigs.map((pig) => (
@@ -29,6 +31,7 @@ const Playground = ({ countPigs, score, setScore, chooseCoin, timer }) => {
         key={pig.id}
         id={pig.id}
         setScore={setScore}
+        idPiggy={idPiggy}
         isCoinUp={pig.id === idPiggy}
         chooseCoin={chooseCoin}
       />

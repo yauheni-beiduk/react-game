@@ -1,7 +1,8 @@
 import styles from "../App.module.css";
 import Main from "./Main";
-import HomePage from './Header/HomePage'
+import HomePage from './HomePage/HomePage'
 import { useEffect, useState } from 'react';
+import AudioControl from './Audio/AudioControl'
 
 const MainContainer = () => {
 const [gameState, setGameState] = useState("start");
@@ -31,7 +32,7 @@ function getMainContent() {
             <HomePage
               title={"Game Over !"}
               content={`Your Score : ${score}`}
-              button={"Play Again"}
+              button={"New Game"}
               buttonClick={gameStart}
             />
           );
@@ -40,7 +41,8 @@ function getMainContent() {
   }
 }
 return (
-  <div className={styles.game}>  
+  <div className={styles.game}>
+    <AudioControl/>  
      {getMainContent()} 
 {/* <Main setGameState={setGameState}/> */}
   </div>

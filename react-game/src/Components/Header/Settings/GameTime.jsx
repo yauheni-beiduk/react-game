@@ -3,14 +3,12 @@ import styles from '../Header.module.css'
 
 const GameTime = ({setTime}) => {
     const [time,setTimer] = useState(30);
-    const handlerOnClickTimeOne = () => {
-        setTimer(30);
-        setTime(30);
-      };
-      const handlerOnClickTimeTwo = () => {
-        setTimer(60);
-        setTime(60);
-      };
+   
+    const handlerOnClick = (e) => {
+      setTime((+e.target.value));
+      setTimer(+e.target.value)  
+    }
+
     return (
         <div className={styles.buttonsCoins}>
         <label>
@@ -18,7 +16,7 @@ const GameTime = ({setTime}) => {
             type="radio"
             value="30"
             checked={time == 30}
-            onChange={handlerOnClickTimeOne}
+            onChange={handlerOnClick}
           />
           30 seconds
         </label>
@@ -27,7 +25,7 @@ const GameTime = ({setTime}) => {
             type="radio"
             value="60"
             checked={time == 60}
-            onChange={handlerOnClickTimeTwo}
+            onChange={handlerOnClick}
           />
           60 seconds
         </label>

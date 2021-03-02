@@ -29,12 +29,12 @@ function Main({setGameState,gameState ,score,setScore,sec,setTime}) {
    if(gameState==='game') {
     const timer = setTimeout(() => setTime(sec - 1), 1000);
     if (sec === 0) {
-      console.log('the end')
       setGameState("end");
     }
       return () => clearTimeout(timer);
     }
   }, [sec]);
+
   return (
     <div>
       <FullScreen handle={handle}>

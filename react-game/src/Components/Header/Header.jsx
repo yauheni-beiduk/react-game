@@ -14,6 +14,13 @@ import settings from './icons/settings.svg'
 const Header = ({handle,score,countPigs,setCountPigs,setChooseCoin,imagesUrl,sec,setTime}) => {
   const [modal, setModal] = useState(false);
 
+ const handleKeyPress = event => {
+    if (event.key == '7') {
+      setModal(true);
+    }
+  };
+document.addEventListener('keyup',handleKeyPress)
+
   return (
     <div className={styles.name}>
       <PureModal
@@ -42,7 +49,7 @@ const Header = ({handle,score,countPigs,setCountPigs,setChooseCoin,imagesUrl,sec
       <div  onClick={handle.enter}>
         <img className={styles.settings} src={full} alt="fullscreen"/>
       </div>
-      <div  onClick={() => setModal(true)}>
+      <div onClick={() => setModal(true)}>
       <img className={styles.settings} src={settings} alt="settings"/>
       </div>
       </div>

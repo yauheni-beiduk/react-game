@@ -14,8 +14,7 @@ const ButtonChangeQuantity = ({setCountPigs}) => {
   }
   const handlerOnClick = (e) => {
     setCountPigs(getPigs(+e.target.value));
-    setQuantity(+e.target.value)
-    
+    setQuantity(+e.target.value)  
   }
     // const handlerOnClickThreePigsSetings = () => {
     //     if (countPigs.length == 6) {
