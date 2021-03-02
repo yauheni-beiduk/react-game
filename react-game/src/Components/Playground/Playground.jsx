@@ -3,7 +3,6 @@ import "./Playground.css";
 import { useEffect, useState } from "react";
 
 const Playground = ({ countPigs, score, setScore, chooseCoin, timer }) => {
-
   const [idPiggy, setIdPiggy] = useState(null);
 
   useEffect(() => {
@@ -11,18 +10,17 @@ const Playground = ({ countPigs, score, setScore, chooseCoin, timer }) => {
       const number = Math.floor(Math.random() * countPigs.length);
       const bank = countPigs[number];
       if (bank.id == idPiggy) {
-        return randomPiggyBank(countPigs)
+        return randomPiggyBank(countPigs);
       }
       return bank.id;
     };
     if ({ timer } != 0) {
-      const timer =  setTimeout(() => {
+      const timer = setTimeout(() => {
         setIdPiggy(randomPiggyBank(countPigs));
       }, 1000);
     }
     return () => clearTimeout(timer);
   }, [idPiggy]);
-
 
   const renderPigs = (countPigs) =>
     countPigs.map((pig) => (
@@ -41,5 +39,3 @@ const Playground = ({ countPigs, score, setScore, chooseCoin, timer }) => {
 };
 
 export default Playground;
-
-

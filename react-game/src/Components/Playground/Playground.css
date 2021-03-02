@@ -1,11 +1,10 @@
-
 .playground {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;  
-    align-items: center;
-    width: 100%;
-    height: 80vh;
-    margin: 0 auto;
-    background-color: #DBC1AD;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  margin: 0 auto;
+  background-color: #dbc1ad;
 }

@@ -1,22 +1,20 @@
-import styles from '../Header.module.css'
+import styles from "../Header.module.css";
 import { useState } from "react";
 
-
-const ButtonChangeCoin = ({setChooseCoin,imagesUrl}) => {
-
-  const [checkedCoin,setCheckedCoin] = useState('bitcoin')
+const ButtonChangeCoin = ({ setChooseCoin, imagesUrl }) => {
+  const [checkedCoin, setCheckedCoin] = useState("bitcoin");
 
   const handlerOnClickImageBitcoin = () => {
     setChooseCoin(imagesUrl.bitcoin);
-    setCheckedCoin('bitcoin')
+    setCheckedCoin("bitcoin");
   };
   const handlerOnClickImageDollar = () => {
     setChooseCoin(imagesUrl.dollar);
-    setCheckedCoin('dollar')
+    setCheckedCoin("dollar");
   };
   const handlerOnClickImageEuro = () => {
     setChooseCoin(imagesUrl.euro);
-    setCheckedCoin('euro')
+    setCheckedCoin("euro");
   };
 
   return (
@@ -51,6 +49,5 @@ const ButtonChangeCoin = ({setChooseCoin,imagesUrl}) => {
     </div>
   );
 };
-
 
 export default ButtonChangeCoin;

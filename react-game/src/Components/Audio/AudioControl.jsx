@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import sound from "./sound.svg";
 import sound_off from "./sound-off.svg";
-import './Audio.css'
-import sounds from "../Header/Settings/music.mp3";
+import "./Audio.css";
+import sounds from "./music.mp3";
 
 function AudioControl() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,7 +29,8 @@ function AudioControl() {
         <img
           alt="sounds"
           src={isPlaying ? sound : sound_off}
-          onClick={playMusic}/>
+          onClick={playMusic}
+        />
       </div>
     </>
   );

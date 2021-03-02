@@ -9,10 +9,10 @@
   margin: 0 auto;
   cursor: pointer;
 }
-.coinUp{ 
+.coinUp {
   width: 80px;
   height: 80px;
-  background:  bottom center no-repeat;
+  background: bottom center no-repeat;
   background-size: 70px 70px;
   position: absolute;
   top: 0%;

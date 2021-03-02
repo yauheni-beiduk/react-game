@@ -6,9 +6,8 @@ import bitcoin from "./Playground/Coin/iconsCoin/bitcoin.png";
 import dollar from "./Playground/Coin/iconsCoin/dollars.png";
 import euro from "./Playground/Coin/iconsCoin/euro.png";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import styles from './Main.module.css'
 
-function Main({setGameState,gameState ,score,setScore,sec,setTime}) {
+function Main({ setGameState, gameState, score, setScore, sec, setTime }) {
   const handle = useFullScreenHandle();
   const [countPigs, setCountPigs] = useState([
     { id: 1 },
@@ -24,13 +23,16 @@ function Main({setGameState,gameState ,score,setScore,sec,setTime}) {
     euro,
   };
   const [chooseCoin, setChooseCoin] = useState(imagesUrl.bitcoin);
+  window.localStorage.setItem('score', JSON.stringify(countPigs));
 
-  useEffect(() => { 
-   if(gameState==='game') {
-    const timer = setTimeout(() => setTime(sec - 1), 1000);
-    if (sec === 0) {
-      setGameState("end");
-    }
+  useEffect(() => {
+    if (gameState === "game") {
+      const timer = setTimeout(() => setTime(sec - 1), 1000);
+
+      if (sec === 0) {
+        setGameState("end");
+        // window.localStorage.setItem('score', JSON.stringify(score));
+      }
       return () => clearTimeout(timer);
     }
   }, [sec]);
