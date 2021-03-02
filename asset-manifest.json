@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/react-game/static/css/main.83bcc89e.chunk.css",
+    "main.js": "/react-game/static/js/main.23caaf8b.chunk.js",
+    "main.js.map": "/react-game/static/js/main.23caaf8b.chunk.js.map",
+    "runtime-main.js": "/react-game/static/js/runtime-main.248b018b.js",
+    "runtime-main.js.map": "/react-game/static/js/runtime-main.248b018b.js.map",
+    "static/css/2.2c5dda5a.chunk.css": "/react-game/static/css/2.2c5dda5a.chunk.css",
+    "static/js/2.9e7a5693.chunk.js": "/react-game/static/js/2.9e7a5693.chunk.js",
+    "static/js/2.9e7a5693.chunk.js.map": "/react-game/static/js/2.9e7a5693.chunk.js.map",
+    "static/js/3.81bcd340.chunk.js": "/react-game/static/js/3.81bcd340.chunk.js",
+    "static/js/3.81bcd340.chunk.js.map": "/react-game/static/js/3.81bcd340.chunk.js.map",
+    "index.html": "/react-game/index.html",
+    "static/css/2.2c5dda5a.chunk.css.map": "/react-game/static/css/2.2c5dda5a.chunk.css.map",
+    "static/css/main.83bcc89e.chunk.css.map": "/react-game/static/css/main.83bcc89e.chunk.css.map",
+    "static/js/2.9e7a5693.chunk.js.LICENSE.txt": "/react-game/static/js/2.9e7a5693.chunk.js.LICENSE.txt",
+    "static/media/bitcoin.f2c8e179.png": "/react-game/static/media/bitcoin.f2c8e179.png",
+    "static/media/dollars.3c113c49.png": "/react-game/static/media/dollars.3c113c49.png",
+    "static/media/euro.896a1471.png": "/react-game/static/media/euro.896a1471.png",
+    "static/media/full.b0db37f7.svg": "/react-game/static/media/full.b0db37f7.svg",
+    "static/media/github.04be58c1.svg": "/react-game/static/media/github.04be58c1.svg",
+    "static/media/music.4b905f4c.mp3": "/react-game/static/media/music.4b905f4c.mp3",
+    "static/media/PiggyBank.module.css": "/react-game/static/media/piggy.7a60236b.png",
+    "static/media/rsSchool.ad178c0d.svg": "/react-game/static/media/rsSchool.ad178c0d.svg",
+    "static/media/settings.edbe9ac4.svg": "/react-game/static/media/settings.edbe9ac4.svg",
+    "static/media/sound-off.b826b9b4.svg": "/react-game/static/media/sound-off.b826b9b4.svg",
+    "static/media/sound.b9ac0fb9.svg": "/react-game/static/media/sound.b9ac0fb9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.248b018b.js",
+    "static/css/2.2c5dda5a.chunk.css",
+    "static/js/2.9e7a5693.chunk.js",
+    "static/css/main.83bcc89e.chunk.css",
+    "static/js/main.23caaf8b.chunk.js"
+  ]
+}
