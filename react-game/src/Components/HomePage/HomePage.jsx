@@ -1,7 +1,6 @@
 import styles from "./HomePage.module.css";
 
 const HomePage = (props) => {
-  
   return (
     <div className={styles.main}>
       <div className={styles.card}>

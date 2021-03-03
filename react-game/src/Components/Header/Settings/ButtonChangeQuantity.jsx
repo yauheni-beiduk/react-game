@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ButtonChangeQuantity = ({ setCountPigs }) => {
   const [quantity, setQuantity] = useState(6);
-  
+
   const getPigs = (length) => {
     let array = [];
     for (let i = 1; i <= length; i++) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../Header.module.css";
 
-const GameTime = ({ setTime }) => {
+const GetGameTime = ({ setTime }) => {
   const [time, setTimer] = useState(30);
 
   const handlerOnClick = (e) => {
@@ -33,4 +33,4 @@ const GameTime = ({ setTime }) => {
   );
 };
 
-export default GameTime;
+export default GetGameTime;

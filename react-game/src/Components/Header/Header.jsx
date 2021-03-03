@@ -5,7 +5,7 @@ import { useState } from "react";
 import ButtonChangeCoin from "./Settings/ButtonChangeCoin";
 import ButtonChangeQuantity from "./Settings/ButtonChangeQuantity";
 import Timer from "./Timer";
-import GameTime from "./Settings/GameTime";
+import GetGameTime from "./Settings/GameTime";
 import full from "./icons/full.svg";
 import settings from "./icons/settings.svg";
 import useEvent from "../Utility/UtilityFunction";
@@ -30,7 +30,7 @@ const Header = ({
       setModal(true);
     }
   };
- useEvent("keydown", handleKeyPress);
+  useEvent("keydown", handleKeyPress);
 
   return (
     <div className={styles.name}>
@@ -53,7 +53,7 @@ const Header = ({
           setCountPigs={setCountPigs}
         />
         <div className={styles.title}>Game time:</div>
-        <GameTime setTime={setTime} />
+        <GetGameTime setTime={setTime} />
       </PureModal>
       <div className={styles.fullscreen}>
         <div onClick={handle.enter}>

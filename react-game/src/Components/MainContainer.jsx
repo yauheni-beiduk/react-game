@@ -4,20 +4,26 @@ import HomePage from "./HomePage/HomePage";
 import { useState } from "react";
 import AudioControl from "./Audio/AudioControl";
 
-
 const MainContainer = () => {
   const [gameState, setGameState] = useState("start");
   const [score, setScore] = useState(0);
   const [sec, setTime] = useState(30);
   function gameStart() {
-    setTime(10);
+    setTime(30);
     setScore(0);
     setGameState("game");
   }
 
-
   let bestScores = JSON.parse(localStorage.getItem("Best Scores")) || [];
-
+  function getLocalStore() {
+    bestScores.push(score);
+    bestScores.sort((a, b) => b - a);
+    bestScores.splice(10);
+    let uniqueArray = bestScores.filter(function (item, pos) {
+      return bestScores.indexOf(item) == pos;
+    });
+    localStorage.setItem("Best Scores", JSON.stringify(uniqueArray));
+  }
 
   function getMainContent() {
     switch (gameState) {
@@ -65,33 +71,27 @@ const MainContainer = () => {
           />
         );
       case "end":
-        function getLocalStore() {
-          bestScores.push(score);
-          bestScores.sort((a, b) => b - a);
-         bestScores.splice(10);
-         console.log(score)
-          localStorage.setItem("Best Scores", JSON.stringify(bestScores));
-        }
-        getLocalStore()
-        let scores = JSON.parse(localStorage.getItem("Best Scores"))
-        console.log(scores)
-        let i = 0
-        let tenScore= scores.map(score=>{
-          return <div key={i++}>
-          <li>{score}</li>
-          </div>
-        })
-        console.log(tenScore)
+        getLocalStore();
+        let scores = JSON.parse(localStorage.getItem("Best Scores"));
+        let i = 0;
+        let tenScore = scores.map((score) => {
+          return (
+            <div key={i++}>
+              <li>{score}</li>
+            </div>
+          );
+        });
         return (
           <HomePage
             title={"Game Over !"}
             content={`Your Score : ${score}`}
             button={"New Game"}
             buttonClick={gameStart}
-            description={<>
-            Best Scores:
-            {tenScore}
-            </>
+            description={
+              <>
+                Best Scores:
+                {tenScore}
+              </>
             }
           />
         );

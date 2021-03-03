@@ -23,19 +23,17 @@ function AudioControl() {
     setIsPlaying((playing) => !playing);
   };
 
-
   const handlerKey = (e) => {
-    if(e.key== ' ') {
+    if (e.key == " ") {
       setIsPlaying((playing) => !playing);
     }
-  }
-useEvent("keydown", handlerKey);
+  };
+  useEvent("keydown", handlerKey);
   return (
     <>
       <audio ref={musicRef} src={sounds}></audio>
-      <div  className="music-btn">
+      <div className="music-btn">
         <img
-       
           alt="sounds"
           src={isPlaying ? sound : sound_off}
           onClick={playMusic}

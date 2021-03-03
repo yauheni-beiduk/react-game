@@ -34,7 +34,6 @@ function Main({ setGameState, gameState, score, setScore, sec, setTime }) {
     }
   }, [sec]);
 
-
   return (
     <div>
       <FullScreen handle={handle}>
