@@ -1,0 +1,46 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #212121;
+  border: 2px solid;
+  color: #e4f9fa;
+  border-radius: 2rem;
+}
+
+.cardButton {
+  cursor: pointer;
+  margin-top: 5rem;
+  border: none;
+  color: white;
+  border-radius: 0.8rem;
+  border: 2px solid;
+  padding: 1.5rem 3rem;
+  background-color: green;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.6rem;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.description {
+  line-height: 1;
+  margin-top: 15px;
+  text-align: inherit;
+  width: 80%;
+}

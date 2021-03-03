@@ -1,0 +1,17 @@
+.gameover {
+  font-size: 30px;
+  background-color: blanchedalmond;
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.score {
+  padding-top: 50px;
+}
+
+.playAgain {
+  cursor: pointer;
+  outline: none;
+}
