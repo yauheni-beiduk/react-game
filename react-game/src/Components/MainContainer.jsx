@@ -3,12 +3,7 @@ import Main from "./Main";
 import HomePage from "./HomePage/HomePage";
 import { useState } from "react";
 import AudioControl from "./Audio/AudioControl";
-// let fs = require('fs')
 
-// fs.appendFile("results.json", json , function (err) {
-//   if (err) throw err;
-//   console.log('The "data to append" was appended to file!');
-// });
 
 const MainContainer = () => {
   const [gameState, setGameState] = useState("start");
@@ -21,17 +16,8 @@ const MainContainer = () => {
   }
 
 
+  let bestScores = JSON.parse(localStorage.getItem("Best Scores")) || [];
 
-  function localStore() {
-    let bestScores = JSON.parse(localStorage.getItem("Best Scores")) || [];
-    const highScore = {
-      score,
-    };
-    bestScores.push(highScore);
-    bestScores.sort((a, b) => b.score - a.score);
-    bestScores.splice(10);
-    localStorage.setItem("Best Scores", JSON.stringify(bestScores));
-  }
 
   function getMainContent() {
     switch (gameState) {
@@ -79,13 +65,34 @@ const MainContainer = () => {
           />
         );
       case "end":
-        localStore()
+        function getLocalStore() {
+          bestScores.push(score);
+          bestScores.sort((a, b) => b - a);
+         bestScores.splice(10);
+         console.log(score)
+          localStorage.setItem("Best Scores", JSON.stringify(bestScores));
+        }
+        getLocalStore()
+        let scores = JSON.parse(localStorage.getItem("Best Scores"))
+        console.log(scores)
+        let i = 0
+        let tenScore= scores.map(score=>{
+          return <div key={i++}>
+          <li>{score}</li>
+          </div>
+        })
+        console.log(tenScore)
         return (
           <HomePage
             title={"Game Over !"}
             content={`Your Score : ${score}`}
             button={"New Game"}
             buttonClick={gameStart}
+            description={<>
+            Best Scores:
+            {tenScore}
+            </>
+            }
           />
         );
       default:
