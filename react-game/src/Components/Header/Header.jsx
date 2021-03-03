@@ -8,6 +8,7 @@ import Timer from "./Timer";
 import GameTime from "./Settings/GameTime";
 import full from "./icons/full.svg";
 import settings from "./icons/settings.svg";
+import useEvent from "../Utility/UtilityFunction";
 
 const Header = ({
   handle,
@@ -22,11 +23,14 @@ const Header = ({
   const [modal, setModal] = useState(false);
 
   const handleKeyPress = (event) => {
-    if (event.key == "7") {
+    if (event.key == "`") {
+      setModal(true);
+    }
+    if (event.key == "Escape") {
       setModal(true);
     }
   };
-  document.addEventListener("keyup", handleKeyPress);
+ useEvent("keydown", handleKeyPress);
 
   return (
     <div className={styles.name}>

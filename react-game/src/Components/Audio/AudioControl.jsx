@@ -3,6 +3,7 @@ import sound from "./sound.svg";
 import sound_off from "./sound-off.svg";
 import "./Audio.css";
 import sounds from "./music.mp3";
+import useEvent from "../Utility/UtilityFunction";
 
 function AudioControl() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -22,11 +23,19 @@ function AudioControl() {
     setIsPlaying((playing) => !playing);
   };
 
+
+  const handlerKey = (e) => {
+    if(e.key== ' ') {
+      setIsPlaying((playing) => !playing);
+    }
+  }
+useEvent("keydown", handlerKey);
   return (
     <>
       <audio ref={musicRef} src={sounds}></audio>
-      <div className="music-btn">
+      <div  className="music-btn">
         <img
+       
           alt="sounds"
           src={isPlaying ? sound : sound_off}
           onClick={playMusic}

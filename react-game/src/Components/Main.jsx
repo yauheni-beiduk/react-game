@@ -23,19 +23,17 @@ function Main({ setGameState, gameState, score, setScore, sec, setTime }) {
     euro,
   };
   const [chooseCoin, setChooseCoin] = useState(imagesUrl.bitcoin);
-  window.localStorage.setItem('score', JSON.stringify(countPigs));
 
   useEffect(() => {
     if (gameState === "game") {
       const timer = setTimeout(() => setTime(sec - 1), 1000);
-
       if (sec === 0) {
         setGameState("end");
-        // window.localStorage.setItem('score', JSON.stringify(score));
       }
       return () => clearTimeout(timer);
     }
   }, [sec]);
+
 
   return (
     <div>
